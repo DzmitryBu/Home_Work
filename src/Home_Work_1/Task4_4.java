@@ -7,7 +7,7 @@ public class Task4_4 {
         System.out.println("Введите объем памяти в байтах");
         int memoryByt1 = in.nextInt(); //записываем в переменную полученное от пользователя значение
 
-        double memoryKb1 = memoryByt1 / 1024d;//необходиму ставить d, что бы не потерять данные после точки
+        double memoryKb1 = memoryByt1 / 1024d;// ставим d, что бы не потерять данные после точки
         System.out.println("Объем памяти в байтах " + memoryByt1 + " представлено в Кб: " + memoryKb1);
 
         System.out.println("Введите объем памяти в Кб");
