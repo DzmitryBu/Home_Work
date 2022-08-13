@@ -14,6 +14,13 @@ public class Task5 {
         } else System.out.println("Пора вставать на работу");
     }
 
+
+    /**
+     *
+     * @param weekday
+     * @param vacation
+     * @return
+     */
     public static boolean sleepIn (boolean weekday, boolean vacation){
 
         if (!weekday || vacation) {//если у нас не рабочий день, то не важно в отпуске ли мы, поэтому оператор ||
