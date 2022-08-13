@@ -1,5 +1,5 @@
 package Home_Work_2.arrays;
-import static Home_Work_2.arrays.ArraysUtils.arrayFromConsole;
+import static Home_Work_2.utils.ArraysUtils.arrayFromConsole;
 
 public class ArraysIteration {
     /**
