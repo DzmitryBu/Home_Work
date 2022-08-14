@@ -22,13 +22,17 @@ public class Multiply1_1 {
                 a = console.nextLong();
                 }
             }
-            long b = multiply(a);
             String text = "1";
 
             for (int i = 2; i <= a; i++) {
                 text = text + " * " + i;
             }
-            System.out.println(text + " = " + multiply(a));
+            long b = multiply(a);
+            long c = recursion(a);
+            System.out.println("Рещультат метода multiply: " + text + " = " + b);
+            System.out.println("Рещультат метода recursion: " + text + " = " + c);
+
+
         }
 //    }
     /**
@@ -41,6 +45,14 @@ public class Multiply1_1 {
         for (int i = 1; i <= a; i++){
             x = x * i;
         }
+        return x;
+    }
+    public static long recursion(long a){
+        long x = 1;
+        if(a == 1){
+            return x;
+        }
+        x = a * recursion(a-1);
         return x;
     }
 }
