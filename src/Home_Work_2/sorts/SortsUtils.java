@@ -1,4 +1,4 @@
-package Home_Work_2.utils;
+package Home_Work_2.sorts;
 
 import java.util.Arrays;
 
