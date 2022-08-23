@@ -7,9 +7,9 @@ import Home_Work_3.calcs.simple.CalculatorWithOperator;
 public class CalculatorWithCounterAutoChoiceAgregation {
 
     private long count;
-    CalculatorWithOperator calc1;
-    CalculatorWithMathCopy calc2;
-    CalculatorWithMathExtends calc3;
+    private CalculatorWithOperator calc1;
+    private CalculatorWithMathCopy calc2;
+    private CalculatorWithMathExtends calc3;
 
     public CalculatorWithCounterAutoChoiceAgregation(CalculatorWithOperator x){
         calc1 = x;
