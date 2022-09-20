@@ -4,34 +4,41 @@ import java.util.Scanner;
 
 public class Multiply1_2 {
     public static void main(String[] args) {
-//        System.out.println(Arrays.toString(args));
-//        for (String number : args) {
-//            System.out.println("Число, " + number);
+
         Scanner console = new Scanner(System.in);
         System.out.println("Введите целое число: ");
         String number = console.nextLine();
-            long l = 0;
-            boolean numberInt = true;
-            do {
-                try {
-                    if ((number.toLowerCase().contains("e") || number.toLowerCase().contains("."))) {
-                        double d = Double.parseDouble(number);//вещественный тип
-                        System.out.println("Вы ввели вещественное число, введите целое число: ");
-                        number = console.nextLine();
-                    }
-                    else {
-                        l = Long.parseLong(number);
-                        numberInt = false;
-                    }
-                } catch (NumberFormatException nfe) { //строчный тип
-                    System.out.println("Вы ввели не целое число, введите целое число:  ");
-                    number = console.nextLine();
-                }
-            }
-            while (numberInt);
-        System.out.println(format(l) + " = " + multiply(l));
-    }
 
+        Multiply1_2 temp = new Multiply1_2();
+
+        long l = temp.input(number);
+
+        System.out.println(format(l) + multiply(l));
+    }
+    public long input(String number) {
+        Scanner console = new Scanner(System.in);
+        long l = 0;
+        boolean numberInt = true;
+
+        do {
+            try {
+                if ((number.toLowerCase().contains("e") || number.toLowerCase().contains("."))) {
+                    double d = Double.parseDouble(number);//вещественный тип
+                    System.out.println("Вы ввели вещественное число, введите целое число: ");
+                    number = console.nextLine();
+                } else {
+                    l = Long.parseLong(number);
+                    numberInt = false;
+                }
+            } catch (NumberFormatException nfe) { //строчный тип
+                System.out.println("Вы ввели не число:  ");
+                number = console.nextLine();
+            }
+        }
+        while (numberInt);
+
+        return l;
+    }
     /**
      *метод преобразует переданное в метод число в произведение каждого его элемента (1234 = 1 * 2 * 3 * 4)
      * @param b число, передаваемое в метод для преобразования
@@ -39,6 +46,9 @@ public class Multiply1_2 {
      */
     public static String format(long b) {
         String text = "";
+        if(b == 0){
+            text = "0";
+        }
         long c;
         while (b != 0) {
             if (b / 10 == 0){
@@ -51,9 +61,8 @@ public class Multiply1_2 {
                 b = b / 10;
             }
         }
-        return text;
+        return text + " = ";
     }
-
     /**
      * метод позволяет перемножить все элементы числа между собой
      * @param a - число, переданной в метод, для меремножения каждого его элемента
@@ -62,6 +71,9 @@ public class Multiply1_2 {
     public static long multiply (long a){
         long b;
         long result = 1;
+        if (a == 0){
+            return 0;
+        }
         while (a != 0){
             b = a % 10;
             result = result * b;

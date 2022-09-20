@@ -2,14 +2,20 @@ package Home_Work_2.loops;
 import java.util.Scanner;
 
 public class Task1_3 {
+    private double number;
+    private int degree;
+
     public static void main(String[] args){
+        Task1_3 temp = new Task1_3();
+        temp.input();
+        System.out.println(temp.printResult(temp.number, temp.degree));
+    }
+    public void input(){
         Scanner console = new Scanner(System.in);
         System.out.println("Введи число, которое нужно возвести в степень: ");
-        double number = console.nextDouble();
+        this.number = console.nextDouble();
         System.out.println("Введи целое число, обозначающее степень возведения введенного числа: ");
-        int degree = console.nextInt();
-
-        System.out.println(numberInDegree(number, degree));
+        this.degree = console.nextInt();
     }
 
     /**
@@ -18,11 +24,11 @@ public class Task1_3 {
      * @param b - число, указывающее в какую степень необходимо возвести
      * @return - методу возвращается результат возведения числа а в степень b
      */
-    public static double numberInDegree(double a, int b){
+    public double numberInDegree(double a, int b){
         double result;
-        if (a == 0){
+        if (b == 0){
             return 1;
-        } else if (a == 1){
+        } else if (b == 1){
             return a;
         } else {
             result = a;
@@ -31,5 +37,8 @@ public class Task1_3 {
             }
         }
         return result;
+    }
+    public String printResult(double number, int degree){
+        return number + " ^ " + degree +" = " + numberInDegree(number, degree);
     }
 }

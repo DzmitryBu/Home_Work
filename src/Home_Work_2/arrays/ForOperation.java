@@ -6,35 +6,38 @@ public class ForOperation implements IArraysOperation{
     public static void main(String[] args){
         ForOperation array = new ForOperation();
         int[] arr = arrayFromConsole();
-        array.allElementsArray(arr);
-        array.everySecondElement(arr);
-        array.arrayInReverse(arr);
+        System.out.println(array.allElementsArray(arr));
+        System.out.println(array.everySecondElement(arr));
+        System.out.println(array.arrayInReverse(arr));
     }
 
     @Override
-    public void allElementsArray(int[] arr) {
-        System.out.print("Перебор массива через цикл for имеет вид: ");
+    public String allElementsArray(int[] arr) {
+        String result;
+        result = "Перебор массива через цикл for имеет вид:";
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+           result = result + " " + arr[i];
         }
-        System.out.println();
+        return result;
     }
 
     @Override
-    public void everySecondElement(int[] arr) {
-        System.out.print("Каждый второй элемент массива через цикл for имеет вид: ");
+    public String everySecondElement(int[] arr) {
+        String result;
+        result = "Каждый второй элемент массива через цикл for имеет вид:";
         for (int i = 1; i < arr.length; i+=2) {
-            System.out.print(arr[i] + " ");
+            result = result + " " + arr[i];
         }
-        System.out.println();
+        return result;
     }
 
     @Override
-    public void arrayInReverse(int[] arr) {
-        System.out.print("Массив в обратном порядке через цикл for имеет вид: ");
+    public String arrayInReverse(int[] arr) {
+        String result;
+        result = "Массив в обратном порядке через цикл for имеет вид:";
         for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i] + " ");
+            result = result + " " + arr[i];
         }
-        System.out.println();
+        return result;
     }
 }

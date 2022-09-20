@@ -7,10 +7,14 @@ public class Task4_1 {
         System.out.println("Введите число для проверки на нечётность типа integer");
         int number = in.nextInt();//записываем в переменную полученное от пользователя значение
 
+        Task4_1 temp = new Task4_1();
+        System.out.println(temp.evenOrNot(number));
+    }
+    public String evenOrNot(int number){
         if (number % 2 == 0) {//проверяем, делится ли число на 2 без остатка, если да, то оно четное
-            System.out.println("Введенное число " + number + " является чётным");
+            return "Введенное число " + number + " является чётным";
         } else {//иначе не четное
-            System.out.println("Введенное число " + number + " является нечётным");
+            return "Введенное число " + number + " является нечётным";
         }
     }
 }

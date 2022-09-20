@@ -1,23 +1,23 @@
 package Home_Work_1;
 import java.util.Scanner;
 
-public class Task6_3 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Введите Ваше имя");
-        String name = in.next();//записываем в переменную полученное от пользователя значение
-
+public class Task6_3 implements ICommunicationPrinter{
+    private String name;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    @Override
+    public String welcom(String name) {
         switch (name){
             case ("Вася")://сравниваем переменную name c "Вася"
-                System.out.println("Привет!\nЯ тебя так долго ждал");
-                break;//если в результате сравнения true, то завершаем оператор switch
+                return "Привет!\nЯ тебя так долго ждал";
             case ("Анастасия")://сравниваем переменную name c "Анастасия"
-                System.out.println("Я тебя так долго ждал");
-                break;//если в результате сравнения true, то завершаем оператор switch
+                return "Я тебя так долго ждал";
             default://если ни одно из условий не выполнено, то выполняем дефолтовое действие
-                System.out.println("Добрый день, а вы кто?");
-                break;
+                return "Добрый день, а вы кто?";
         }
-
     }
 }

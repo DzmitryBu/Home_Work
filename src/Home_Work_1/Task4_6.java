@@ -7,9 +7,13 @@ public class Task4_6 {
         System.out.println("Введите год");
         int year = in.nextInt();//записываем в переменную полученное от пользователя значение
 
+        Task4_6 temp = new Task4_6();
+        System.out.println(temp.leapYear(year));
+    }
+    public String leapYear(int year){
         if (year % 4 == 0 && year % 400 != 0){//високосный, если делется на 4 без остатка и НЕ делится на 400 без остатка
-            System.out.println("Вы ввели " + year + " год и он является високосным");
+            return "Вы ввели " + year + " год и он является високосным";
         } else//иначе год НЕ високосный
-            System.out.println("Вы ввели " + year + " год и он является НЕвисокосным");
+            return"Вы ввели " + year + " год и он является НЕвисокосным";
     }
 }

@@ -6,35 +6,47 @@ public class ForEachOperation implements IArraysOperation{
     public static void main(String[] args){
         ForEachOperation array = new ForEachOperation();
         int[] arr = arrayFromConsole();
-        array.allElementsArray(arr);
-        array.everySecondElement(arr);
-        array.arrayInReverse(arr);
+        System.out.println(array.allElementsArray(arr));
+        System.out.println(array.everySecondElement(arr));
+        System.out.println(array.arrayInReverse(arr));
     }
 
     @Override
-    public void allElementsArray(int[] arr) {
-        System.out.print("Перебор массива через цикл foreach имеет вид: ");
+    public String allElementsArray(int[] arr) {
+        String result;
+        result = "Перебор массива через цикл foreach имеет вид:";
         for (int element : arr) {
-            System.out.print(element + " ");
+            result = result + " " + element;
         }
-        System.out.println();
+        return result;
     }
 
     @Override
-    public void everySecondElement(int[] arr) {
-        System.out.print("Каждый второй элемент массива через цикл foreach имеет вид: ");
+    public String everySecondElement(int[] arr) {
+        String result;
+        int count = 0;
+        result = "Каждый второй элемент массива через цикл foreach имеет вид:";
         for (int element : arr) {
-            System.out.print(element + " ");
+            count++;
+            if(count % 2 == 0){
+                result = result + " " + element;
+            }
         }
-        System.out.println();
+        return result;
     }
 
     @Override
-    public void arrayInReverse(int[] arr) {
-        System.out.print("Массив в обратном порядке через цикл foreach имеет вид: ");
+    public String arrayInReverse(int[] arr) {
+        String result = "";
+        boolean firstElement = true;
         for (int element : arr) {
-            System.out.print(element + " ");
+            if(firstElement){
+                result = element + "";
+                firstElement = false;
+            }else {
+                result = element + " " + result;
+            }
         }
-        System.out.println();
+        return "Массив в обратном порядке через цикл foreach имеет вид: " + result;
     }
 }

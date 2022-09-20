@@ -8,7 +8,7 @@ public class SortsUtils {
      *  при помощи алгоритма пузырьковой сортировки.
      * @param arr в метод передается массив целочисленного типа.
      */
-    public static void bubble(int[] arr){
+    public String bubble(int[] arr){
         int temp;
         for(int i = 0; i < arr.length; i++){
             for(int j = 0; j < arr.length - 1; j++){
@@ -19,8 +19,7 @@ public class SortsUtils {
                 }
             }
         }
-        System.out.print("Массив после сортировки bubble: ");
-        System.out.println(Arrays.toString(arr));
+        return "Массив после сортировки bubble: " + Arrays.toString(arr);
     }
 
     /**
@@ -28,7 +27,7 @@ public class SortsUtils {
      * при помощи алгоритма шейкерной сортировки.
      * @param arr в метод передается массив целочисленного типа.
      */
-    public static void shake(int[] arr){
+    public String shake(int[] arr){
         int temp;
         int left = 0;
         int right = arr.length - 1;
@@ -54,7 +53,6 @@ public class SortsUtils {
             }
             left++;
         }
-        System.out.print("Массив после сортировки shake: ");
-        System.out.println(Arrays.toString(arr));
+        return "Массив после сортировки shake: " + Arrays.toString(arr);
     }
 }

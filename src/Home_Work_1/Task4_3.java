@@ -8,13 +8,20 @@ public class Task4_3 {
         int number1 = in.nextInt();//записываем в переменную полученное от пользователя значение 1
         int number2 = in.nextInt();//записываем в переменную полученное от пользователя значение 2
 
-        if (number1 % number2 == 0){//проверяем на деление без остатка число1 на число2
-            System.out.println("Число " + number1 + " делится на число " + number2 + " без остатка");
-        }else if (number2 % number1 == 0){//проверяем на деление без остатка число2 на число1
-            System.out.println("Число " + number2 + " делится на число " + number1 + " без остатка");
-        }else
-            System.out.println("Остаток от деления числа " + number1 + " на " + number2 + ": " + number1 % number2);
-            System.out.println("Остаток от деления числа " + number2 + " на " + number1 + ": " + number2 % number1);
+        Task4_3 temp = new Task4_3();
+        System.out.println(temp.divisibility(number1, number2));
 
     }
+
+    public String divisibility(int a, int b) {
+        if (a % b == 0) {//проверяем на деление без остатка число1 на число2
+            return "Число " + a + " делится на число " + b + " без остатка";
+        } else if (b % a == 0) {//проверяем на деление без остатка число2 на число1
+            return "Число " + b + " делится на число " + a + " без остатка";
+        } else {
+            return "Остаток от деления числа " + a + " на " + b + ": " + a % b +
+                   "\nОстаток от деления числа " + b + " на " + a + ": " + b % a;
+        }
+    }
 }
+

@@ -14,12 +14,14 @@ public class Task7 {
             System.out.print(" " + numbers[i]);
         }
         System.out.println();//делаем /n от распечатоной строки
-        System.out.println("Номер телефона в формате: " + creatPhoneNumber(numbers));//распечатем отформатированный номер из результата метода
+        Task7 temp = new Task7();
+        System.out.println("Номер телефона в формате: " + temp.creatPhoneNumber(numbers));//распечатем отформатированный номер из результата метода
 
     }
-    public static String creatPhoneNumber(int[] numbers){//Далее наверное ГОВНОКОД, т.к. слишком длинный))
-         String number = "(" + numbers[0] + numbers[1] + numbers[2] + ")" + " " + numbers[3] + numbers[4] + numbers[5] + "-" + numbers[6] + numbers[7] + numbers[8] + numbers[9];
-
+    public String creatPhoneNumber(int[] numbers){//Далее наверное ГОВНОКОД, т.к. слишком длинный))
+         String number = "(" + numbers[0] + numbers[1] + numbers[2] + ")" + " "
+                 + numbers[3] + numbers[4] + numbers[5] + "-" + numbers[6] + numbers[7]
+                 + numbers[8] + numbers[9];
         return number;//возвращаем методу значение переменной number
     }
 }

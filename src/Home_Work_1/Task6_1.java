@@ -3,22 +3,23 @@ package Home_Work_1;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Task6_1 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Введите Ваше имя");
-        String name = in.next();//записываем в переменную полученное от пользователя значение
+public class Task6_1 implements ICommunicationPrinter{
+    private String name;
 
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    @Override
+   public String welcom(String name) {
         if (Objects.equals(name, "Вася")) {//сравниваем переменную name c "Вася"
-            System.out.println("Привет!\nЯ тебя так долго ждал");
+            return "Привет!\nЯ тебя так долго ждал";
         }
         if (Objects.equals(name, "Анастасия")) {
-            System.out.println("Я тебя так долго ждал");
+            return "Я тебя так долго ждал";
         }
-        if (!Objects.equals(name, "Анастасия") && !Objects.equals(name, "Вася")){
-            System.out.println("Добрый день, а вы кто?");
-        }
-
+        return "Добрый день, а вы кто?";
     }
-
 }

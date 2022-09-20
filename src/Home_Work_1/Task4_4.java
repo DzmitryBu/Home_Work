@@ -7,13 +7,22 @@ public class Task4_4 {
         System.out.println("Введите объем памяти в байтах");
         int memoryByt1 = in.nextInt(); //записываем в переменную полученное от пользователя значение
 
-        double memoryKb1 = memoryByt1 / 1024d;// ставим d, что бы не потерять данные после точки
-        System.out.println("Объем памяти в байтах " + memoryByt1 + " представлено в Кб: " + memoryKb1);
+        Task4_4 temp = new Task4_4();
+        System.out.println(temp.bytToKb(memoryByt1));
 
         System.out.println("Введите объем памяти в Кб");
         int memoryKb2 = in.nextInt();//записываем в переменную полученное от пользователя значение
 
-        int memoryByt2 = memoryKb2 * 1024;// переводим в байты
-        System.out.println("Объем памяти в Кб " + memoryKb2 + " представлено в байтах: " + memoryByt2);
+        System.out.println(temp.kbToByt(memoryKb2));
+    }
+
+    public String bytToKb(int byt){
+        double memoryKb1 = byt / 1024d;
+        return "Объем памяти в байтах " + byt + " представлено в Кб: " + memoryKb1;
+    }
+
+    public String kbToByt(int kb){
+        int memoryByt2 = kb * 1024;// переводим в байты
+        return "Объем памяти в Кб " + kb + " представлено в байтах: " + memoryByt2;
     }
 }

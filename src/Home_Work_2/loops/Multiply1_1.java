@@ -22,37 +22,45 @@ public class Multiply1_1 {
                 a = console.nextLong();
                 }
             }
-            String text = "1";
-
-            for (int i = 2; i <= a; i++) {
-                text = text + " * " + i;
-            }
-            long b = multiply(a);
-            long c = recursion(a);
-            System.out.println("Рещультат метода multiply: " + text + " = " + b);
-            System.out.println("Рещультат метода recursion: " + text + " = " + c);
-
-
+            Multiply1_1 temp = new Multiply1_1();
+            System.out.println(temp.printResult(a));
+    }
+    public String printResult (long a){
+        String text = "1";
+        for (int i = 2; i <= a; i++) {
+            text = text + " * " + i;
         }
-//    }
+        long b = multiply(a);
+        long c = recursion(a);
+        return "Рещультат метода multiply: " + text + " = " + b
+                + "\nРещультат метода recursion: " + text + " = " + c;
+    }
     /**
      * метод перемножает подряд все числа от 1 до переданного значения переменной
      * @param a - переменная типа long
      * @return возвращает методу произведение всех чисел от 1 до а
      */
-    public static long multiply(long a){
-        long x = 1;
-        for (int i = 1; i <= a; i++){
-            x = x * i;
-        }
-        return x;
-    }
-    public static long recursion(long a){
-        long x = 1;
-        if(a == 1){
+    public long multiply(long a){
+        if(a == 0){
+            return 0;
+        }else {
+            long x = 1;
+            for (int i = 1; i <= a; i++) {
+                x = x * i;
+            }
             return x;
         }
-        x = a * recursion(a-1);
-        return x;
+    }
+    public long recursion(long a) {
+        if (a == 0) {
+            return 0;
+        } else {
+            long x = 1;
+            if (a == 1) {
+                return x;
+            }
+            x = a * recursion(a - 1);
+            return x;
+        }
     }
 }

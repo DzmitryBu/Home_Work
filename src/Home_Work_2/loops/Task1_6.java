@@ -6,18 +6,23 @@ public class Task1_6 {
      * @param args
      */
     public static void main(String[] args){
+        System.out.println(multiplicationTable());
+    }
+    public static String multiplicationTable(){
+        String result = "";
         for(int i = 1; i <= 10; i++){
             for(int j = 2; j <= 5; j++){
-                System.out.print(j + " * " + i + " = " + j * i + " | ");
+                result = result + j + " * " + i + " = " + j * i + " | ";
             }
-            System.out.println(" ");
+            result = result + "\n";
         }
-        System.out.println("_________________________________________________________");
+        result = result + "_________________________________________________________\n";
         for(int i = 1; i <= 10; i++) {
             for (int j = 6; j < 10; j++) {
-                System.out.print(j + " * " + i + " = " + j * i + " | ");
+                result = result + j + " * " + i + " = " + j * i + " | ";
             }
-            System.out.println(" ");
+            result = result + "\n";
         }
+        return result;
     }
 }

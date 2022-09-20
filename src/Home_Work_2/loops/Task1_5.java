@@ -12,7 +12,8 @@ public class Task1_5 {
 
         System.out.println("Наибольшая цифра натурального числа " + number + ": " + maxNumber);
         System.out.println("Вероятность четных чисел в работе генератора чисел: " + (probabilityEvenNumbers() * 100) + "%");
-        evenAndOddNumber(number);
+
+        System.out.println(evenAndOddNumber(number));
 
         System.out.println("Введите колличество чисел последовательности Фибоначи");
         int index = console.nextInt();
@@ -70,10 +71,13 @@ public class Task1_5 {
      * натуральном числе. Метод выводит сообщения о количестве четных и нечетных чисел.
      * @param a натуральное число, введенное пользователем через консоль.
      */
-    public static void evenAndOddNumber(int a){
+    public static String evenAndOddNumber(int a){
         int number = a;
         int evenNumber = 0;
         int oddNumber = 0;
+        if(a == 0){
+            evenNumber++;
+        }
         while(a != 0){
             if (a % 2 == 0){
                 evenNumber++;
@@ -82,8 +86,8 @@ public class Task1_5 {
             }
             a = a / 10;
         }
-        System.out.println("В числе " + number + " чётных цифр: " + evenNumber);
-        System.out.println("В числе " + number + " нечётных цифр: " + oddNumber);
+        return "В числе " + number + " чётных цифр: " + evenNumber +
+                "\nВ числе " + number + " нечётных цифр: " + oddNumber;
     }
 
     /**
@@ -92,6 +96,9 @@ public class Task1_5 {
      * @return метод возвращает полученную последовательность Фибоначчи.
      */
     public static String fibonachi(int a){
+        if(a == 0){
+            return "0";
+        }
         String result = "1";
         int x = 1;
         int y = 1;
@@ -115,8 +122,15 @@ public class Task1_5 {
      */
     public static String seriesOfNumbers(int min, int max, int step){
         String result = "";
+        if (step == 0){
+            return "Произойдет зацикливание!";
+        }
         for(int i = min; i <= max; i += step){
-            result = result + " " + i;
+            if(i == min){
+                result = "" + i;
+            }else{
+                result = result + " " + i;
+            }
         }
         return result;
     }
