@@ -1,5 +1,7 @@
 package Home_Work_2.arrays;
 
+import java.util.Arrays;
+
 import static Home_Work_2.utils.ArraysUtils.arrayFromConsole;
 
 public class ForEachOperation implements IArraysOperation{
@@ -7,8 +9,10 @@ public class ForEachOperation implements IArraysOperation{
         ForEachOperation array = new ForEachOperation();
         int[] arr = arrayFromConsole();
         System.out.println(array.allElementsArray(arr));
-        System.out.println(array.everySecondElement(arr));
-        System.out.println(array.arrayInReverse(arr));
+        System.out.println("Каждый второй элемент массива через цикл foreach имеет вид:"
+                + Arrays.toString(array.everySecondElement(arr)));
+        System.out.println("Массив в обратном порядке через цикл foreach имеет вид:"
+                + Arrays.toString(array.arrayInReverse(arr)));
     }
 
     @Override
@@ -20,33 +24,32 @@ public class ForEachOperation implements IArraysOperation{
         }
         return result;
     }
-
     @Override
-    public String everySecondElement(int[] arr) {
-        String result;
-        int count = 0;
-        result = "Каждый второй элемент массива через цикл foreach имеет вид:";
+    public int[] everySecondElement(int[] arr) {
+        int [] result = new int[0];
+        int i = 0;
+        int j = 0;
         for (int element : arr) {
-            count++;
-            if(count % 2 == 0){
-                result = result + " " + element;
+            i++;
+            if(i % 2 == 0){
+                result = Arrays.copyOf(result, result.length + 1);
+                result[j] = arr[i - 1];
+                j++;
+            }
+            if(i == arr.length){
+                break;
             }
         }
         return result;
     }
-
     @Override
-    public String arrayInReverse(int[] arr) {
-        String result = "";
-        boolean firstElement = true;
+    public int[] arrayInReverse(int[] arr) {
+        int[] result = new int[arr.length];
+        int i = arr.length - 1;
         for (int element : arr) {
-            if(firstElement){
-                result = element + "";
-                firstElement = false;
-            }else {
-                result = element + " " + result;
-            }
+            result[i] = element;
+            i--;
         }
-        return "Массив в обратном порядке через цикл foreach имеет вид: " + result;
+        return result;
     }
 }

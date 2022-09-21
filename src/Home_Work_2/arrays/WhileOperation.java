@@ -1,5 +1,7 @@
 package Home_Work_2.arrays;
 
+import java.util.Arrays;
+
 import static Home_Work_2.utils.ArraysUtils.arrayFromConsole;
 
 public class WhileOperation implements IArraysOperation{
@@ -7,8 +9,10 @@ public class WhileOperation implements IArraysOperation{
         WhileOperation array = new WhileOperation();
         int[] arr = arrayFromConsole();
         System.out.println(array.allElementsArray(arr));
-        System.out.println(array.everySecondElement(arr));
-        System.out.println(array.arrayInReverse(arr));
+        System.out.println("Каждый второй элемент массива через цикл while имеет вид:"
+                + Arrays.toString(array.everySecondElement(arr)));
+        System.out.println("Массив в обратном порядке через цикл while имеет вид:"
+                + Arrays.toString(array.arrayInReverse(arr)));
     }
 
     @Override
@@ -24,25 +28,28 @@ public class WhileOperation implements IArraysOperation{
     }
 
     @Override
-    public String everySecondElement(int[] arr) {
-        String result;
-        result = "Каждый второй элемент массива через цикл while имеет вид:";
+    public int[] everySecondElement(int[] arr) {
+        int[] result = new int[0];
         int i = 1;
+        int j = 0;
         while (i < arr.length) {
-            result = result + " " + arr[i];
+            result = Arrays.copyOf(result, result.length + 1);
+            result[j] = arr[i];
             i+=2;
+            j++;
         }
         return result;
     }
 
     @Override
-    public String arrayInReverse(int[] arr) {
-        String result;
-        result = "Массив в обратном порядке через цикл while имеет вид:";
+    public int[] arrayInReverse(int[] arr) {
+        int[] result = new int[arr.length];
         int i = arr.length - 1;
+        int j = 0;
         while (i >= 0) {
-            result = result + " " + arr[i];
+            result[j] = arr[i];
             i--;
+            j++;
         }
         return result;
     }
