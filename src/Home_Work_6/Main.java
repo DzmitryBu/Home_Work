@@ -8,7 +8,7 @@ import Home_Work_6.job.RegExSearch;
 public class Main {
     public static void main(String[] args) {
         Convertion text = new Convertion();
-        String stroka = text.convertionFileToString("Война и мир_книга2.txt");
+        String stroka = text.convertionFileToString("Война и мир_книга.txt");
 
         System.out.println(stroka);
 
